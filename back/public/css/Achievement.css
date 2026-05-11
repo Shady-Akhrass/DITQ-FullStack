@@ -1,0 +1,157 @@
+.Achievements {
+
+    background-image: url("/imagex/Achievements.jpg");
+    background-size: cover;
+    position: relative;
+
+    margin-top: var(--padding-stander);
+    margin-bottom: var(--padding-stander);
+
+    padding-bottom: var(--padding-stander);
+}
+
+.Achievements::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+
+
+
+.Achievements .titles h2 {
+
+    color: #893f32 !important;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.titles h2:hover {
+    transform: rotate(0.3deg) scale(1.04);
+
+    -webkit-transform: rotate(0.3deg) scale(1.04);
+    -moz-transform: rotate(0.3deg) scale(1.04);
+    -ms-transform: rotate(0.3deg) scale(1.04);
+    -o-transform: rotate(0.3deg) scale(1.04);
+}
+
+
+.titles h2>a {
+    padding: 14px !important;
+    text-decoration: none;
+    color: #893f32;
+    border: 1px solid #893f32;
+    border-radius: 50px 0;
+    padding: 30px;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+.titles h2>a:hover {
+    background-color: white;
+    color: var(--second-color);
+    transform: rotate(0.3deg) scale(1.04);
+    -webkit-transform: rotate(0.3deg) scale(1.04);
+    -moz-transform: rotate(0.3deg) scale(1.04);
+    -ms-transform: rotate(0.3deg) scale(1.04);
+    -o-transform: rotate(0.3deg) scale(1.04);
+}
+
+@media(max-width:767px) {
+    * {
+        font-size: 16px !important;
+    }
+}
+
+/* Start Counter */
+.counter {
+    color: var(--second-color);
+    background: linear-gradient(to right bottom, #fff 50%, #c4c4c4 81%);
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    width: 200px;
+    padding: 20px 0 0;
+    margin: 0 auto;
+    border-radius: 50px 0;
+    box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+
+}
+
+.counter:hover {
+
+    transform: rotate(0.3deg) scale(1.04);
+    -webkit-transform: rotate(0.3deg) scale(1.04);
+    -moz-transform: rotate(0.3deg) scale(1.04);
+    -ms-transform: rotate(0.3deg) scale(1.04);
+    -o-transform: rotate(0.3deg) scale(1.04);
+}
+
+.counter .counter-icon {
+    font-size: 45px;
+    margin: 0 0 10px;
+}
+
+.counter h3 {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 0 0 20px;
+}
+
+.counter .counter-value {
+    color: #fff;
+    background: linear-gradient(to right bottom, #893f32, #893f32);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    padding: 7px 0 3px;
+    display: block;
+}
+
+
+
+.counter.blue .counter-value {
+    background: linear-gradient(to right bottom, #893f32, #703227ad);
+}
+
+
+
+@media screen and (max-width:990px) {
+    .counter {
+        margin-bottom: 40px;
+    }
+}
+
+.row {
+
+    margin-top: 30px;
+    position: relative;
+    justify-content: center;
+    z-index: 4;
+}
+
+
+
+/* End Counter */
+
+/* end Achievements */
