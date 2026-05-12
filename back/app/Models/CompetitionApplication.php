@@ -9,6 +9,7 @@ class CompetitionApplication extends Model
     protected $fillable = [
         'student_name',
         'age',
+        'gender',
         'mobile_number',
         'whatsapp_number',
         'governorate',

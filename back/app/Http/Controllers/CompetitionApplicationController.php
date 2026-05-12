@@ -13,6 +13,7 @@ class CompetitionApplicationController extends Controller
         $validatedData = $request->validate([
             'student_name' => 'required|string|max:255',
             'age' => 'required|integer',
+            'gender' => 'required|in:ذكر,أنثى',
             'mobile_number' => 'required|string|max:20',
             'whatsapp_number' => 'required|string|max:20',
             'governorate' => 'required|string',
@@ -25,6 +26,7 @@ class CompetitionApplicationController extends Controller
             'student_name.required' => 'الاسم الرباعي مطلوب.',
             'student_name.max' => 'الاسم الرباعي يجب ألا يتجاوز 255 حرفاً.',
             'age.required' => 'حساب العمر فشل، يرجى إدخال تاريخ الميلاد.',
+            'gender.required' => 'يرجى تحديد الجنس.',
             'mobile_number.required' => 'رقم الجوال مطلوب.',
             'whatsapp_number.required' => 'رقم الواتساب مطلوب.',
             'governorate.required' => 'يرجى تحديد المحافظة.',
@@ -35,6 +37,22 @@ class CompetitionApplicationController extends Controller
             'video_link.required_without' => 'يجب إرفاق رابط فيديو أو رفعه كملف.',
             'video_link.url' => 'رابط الفيديو غير صالح.',
         ]);
+
+        // Add custom validation for female age
+        if ($validatedData['gender'] === 'أنثى' && $validatedData['age'] >= 11) {
+            return response()->json([
+                'message' => 'عذراً، يجب أن يكون عمر الإناث أقل من 11 سنة للمشاركة في المسابقة.',
+                'errors' => ['age' => ['يجب أن يكون عمر الإناث أقل من 11 سنة.']]
+            ], 422);
+        }
+
+        // Add custom validation for Poetry (female only)
+        if ($validatedData['participation_field'] === 'الشعر' && $validatedData['gender'] !== 'أنثى') {
+            return response()->json([
+                'message' => 'عذراً، مجال الشعر مخصص للأناث فقط.',
+                'errors' => ['participation_field' => ['مجال الشعر مخصص للأناث فقط.']]
+            ], 422);
+        }
 
         $application = \App\Models\CompetitionApplication::create($validatedData);
 
